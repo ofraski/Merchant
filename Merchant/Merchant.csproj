@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{745BF5AB-3E66-4BF0-AFC5-908C17CF0024}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Merchant</RootNamespace>
+    <AssemblyName>Merchant</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.6.3.13283, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Conversion\RomanNumeralExceptions.cs" />
+    <Compile Include="Exchanges\GalaxyRomanExchange.cs" />
+    <Compile Include="Exchanges\IRecordGalaxyToRoman.cs" />
+    <Compile Include="Exchanges\IRecordMineralValue.cs" />
+    <Compile Include="Exchanges\IValueMineral.cs" />
+    <Compile Include="Exchanges\MineralExchange.cs" />
+    <Compile Include="Interpretation\IInterpret.cs" />
+    <Compile Include="Interpretation\InstructionType.cs" />
+    <Compile Include="Interpretation\Interpreter.cs" />
+    <Compile Include="IOrchestrateMerchantGalaxySystem.cs" />
+    <Compile Include="Messaging\GalaxyExchangeInstructionHandler.cs" />
+    <Compile Include="Messaging\IHandleGalaxyExchangeQueries.cs" />
+    <Compile Include="Messaging\Instruction.cs" />
+    <Compile Include="Messaging\InstructionExecutionResult.cs" />
+    <Compile Include="Reading\GalaxyExchangeInstructionReading.cs" />
+    <Compile Include="Reading\GalaxyExchangeMessageHandlingCompleteEventArgs.cs" />
+    <Compile Include="Reading\GalaxyExchangeMessageReadingCompleteEventArgs.cs" />
+    <Compile Include="Reading\IReadGalaxyExchangeInstructions.cs" />
+    <Compile Include="Response\InvalidStatement.cs" />
+    <Compile Include="Response\MonetaryValueResponse.cs" />
+    <Compile Include="Response\QueryResponse.cs" />
+    <Compile Include="Response\GalaxyExchangeResponse.cs" />
+    <Compile Include="Query\InterpretMonetaryValueQuery.cs" />
+    <Compile Include="Assignment\InterpretMonetaryValueAssignment.cs" />
+    <Compile Include="Conversion\ConvertGalaxyToRoman.cs" />
+    <Compile Include="Assignment\InterpretUnitAssignment.cs" />
+    <Compile Include="Query\InterpretUnitQuery.cs" />
+    <Compile Include="Conversion\IConvertGalaxyToRoman.cs" />
+    <Compile Include="Conversion\IConvertRomanNumeral.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Conversion\RomanNumeralConverter.cs" />
+    <Compile Include="Response\UnitValueResponse.cs" />
+    <Compile Include="Text\A.cs" />
+    <Compile Include="Tools\ExchangesFactory.cs" />
+    <Compile Include="Tools\ICalculateMineralValue.cs" />
+    <Compile Include="Tools\Make.cs" />
+    <Compile Include="Tools\MakeOrRetrieveExisting.cs" />
+    <Compile Include="Tools\MineralValueCalculator.cs" />
+    <Compile Include="UI\ConsoleUserInterface.cs" />
+    <Compile Include="ICreateApplication.cs" />
+    <Compile Include="UI\IDisplayExchangeResponse.cs" />
+    <Compile Include="Application.cs" />
+    <Compile Include="ApplicationFactory.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
